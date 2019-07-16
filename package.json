@@ -14,7 +14,7 @@
     "prepublishOnly": "npm run test && npm run build",
     "lint": "tsc --noEmit && eslint 'src/**/*.{js,ts,tsx}' --fix",
     "stylelint": "stylelint --fix src/**/*.{less,scss,css}",
-    "test": "jest",
+    "test": "jest --rootDir ./src",
     "test:w": "jest --watchAll --rootDir ./src --passWithNoTests"
   },
   "dependencies": {
