@@ -18,7 +18,8 @@
     "test:w": "jest --watchAll --rootDir ./src --passWithNoTests"
   },
   "dependencies": {
-    "lack": "^0.2.0"
+    "hagent": "^0.6.1",
+    "lru-cache": "^5.1.1"
   },
   "files": [
     "lib"

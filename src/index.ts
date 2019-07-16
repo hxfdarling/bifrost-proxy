@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Server } from 'net';
+import * as utils from './utils';
 if (process.env.NOHOST === 'true') {
   const host = process.env.NOHOST_HOST || '127.0.0.1';
   const port = process.env.NOHOST_PORT || 8899;
@@ -7,7 +8,7 @@ if (process.env.NOHOST === 'true') {
   if (process.env.NOHOST_ENV) {
     headers['whistle_nohost_env'] = process.env.NOHOST_ENV;
   }
-  require('lack').proxy({
+  utils.proxy({
     host,
     port,
     headers,
