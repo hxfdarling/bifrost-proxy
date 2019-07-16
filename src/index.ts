@@ -7,7 +7,6 @@ if (process.env.NOHOST === 'true') {
   if (process.env.NOHOST_ENV) {
     headers['whistle_nohost_env'] = process.env.NOHOST_ENV;
   }
-  console.log('----');
   require('lack').proxy({
     host,
     port,
