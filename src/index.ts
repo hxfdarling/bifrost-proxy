@@ -6,7 +6,7 @@ if (process.env.NOHOST === 'true') {
   const port = process.env.NOHOST_PORT || 8899;
   const headers: any = {};
   if (process.env.NOHOST_ENV) {
-    headers['whistle_nohost_env'] = process.env.NOHOST_ENV;
+    headers['x-whistle-nohost-env'] = process.env.NOHOST_ENV;
   }
   utils.proxy({
     host,
