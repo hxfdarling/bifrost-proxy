@@ -68,6 +68,10 @@ function ClientRequestProxy(uri, options, cb, isHttps) {
     if (proxy) {
       proxy.isHttps = isHttps;
       options.agent = getAgent(proxy, options);
+      if (!options.headers) {
+        options.headers = {};
+      }
+      Object.assign(options.headers, proxy.headers);
     }
   }
   ClientRequest.call(this, options, cb);

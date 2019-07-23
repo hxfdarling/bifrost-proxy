@@ -19,7 +19,8 @@
   },
   "dependencies": {
     "hagent": "^0.6.1",
-    "lru-cache": "^5.1.1"
+    "lru-cache": "^5.1.1",
+    "uuid": "^3.3.2"
   },
   "files": [
     "lib"
