@@ -1,5 +1,5 @@
 {
-  "name": "@byted/nohost-proxy",
+  "name": "nohost-proxy",
   "version": "1.0.3",
   "description": "",
   "main": "lib/common/index.js",
