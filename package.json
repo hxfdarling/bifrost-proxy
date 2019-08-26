@@ -15,7 +15,8 @@
     "lint": "tsc --noEmit && eslint 'src/**/*.{js,ts,tsx}' --fix",
     "stylelint": "stylelint --fix src/**/*.{less,scss,css}",
     "test": "jest --rootDir ./src",
-    "test:w": "jest --watchAll --rootDir ./src --passWithNoTests"
+    "test:w": "jest --watchAll --rootDir ./src --passWithNoTests",
+    "release": "standard-version"
   },
   "dependencies": {
     "hagent": "^0.6.1",
@@ -44,6 +45,7 @@
     "nodemon": "^1.19.1",
     "prettier": "^1.18.2",
     "rimraf": "^2.6.3",
+    "standard-version": "^7.0.0",
     "stylelint": "^10.1.0",
     "stylelint-config-standard": "^18.3.0",
     "stylelint-scss": "^3.9.1",
