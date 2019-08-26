@@ -12,9 +12,12 @@ if (env.NOHOST === 'true') {
   if (env.NOHOST_ENV) {
     headers['x-whistle-nohost-env'] = env.NOHOST_ENV;
   }
-  // 设置nohost客户端ID，因为部署在同一个环境所以本机IP是一样的，需要用额外的请求头设置
-  const uuidv4 = require('uuid/v4');
-  headers['x-whistle-nohost-client-id'] = env.NOHOST_CLIENT_ID || uuidv4();
+  // 如果是本地开发，则不添加ID
+  if (host !== '127.0.0.1') {
+    const uuidv4 = require('uuid/v4');
+    // 设置nohost客户端ID，因为部署在同一个环境所以本机IP是一样的，需要用额外的请求头设置
+    headers['x-whistle-nohost-client-id'] = env.NOHOST_CLIENT_ID || uuidv4();
+  }
   console.log('------nohost-proxy----------');
   console.log(headers);
   console.log('----------------------------');
