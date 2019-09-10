@@ -1,4 +1,5 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-underscore-dangle */
 const tunnel = require('hagent').agent;
 const LRU = require('lru-cache');
 const net = require('net');
@@ -9,7 +10,7 @@ const agents = new LRU({ max: 360 });
 const noop = () => {};
 let emptyReq;
 
-const removeIPV6Prefix = ip => {
+const removeIPV6Prefix = (ip) => {
   if (typeof ip !== 'string') {
     return '';
   }
@@ -29,12 +30,12 @@ const getClientIp = ({ headers }) => {
   return net.isIP(val) ? val : '';
 };
 
-const getCacheKey = options => {
+const getCacheKey = (options) => {
   const { isHttps, host, port } = options;
   return [isHttps ? 'https' : 'http', host, port, getClientIp(options)].join(':');
 };
 
-const capitalize = str => (str && str[0].toUpperCase()) + str.substring(1);
+const capitalize = (str) => (str && str[0].toUpperCase()) + str.substring(1);
 
 const freeSocketErrorListener = () => {
   const socket = this;
@@ -43,7 +44,7 @@ const freeSocketErrorListener = () => {
   socket.removeListener('error', freeSocketErrorListener);
 };
 
-const preventThrowOutError = socket => {
+const preventThrowOutError = (socket) => {
   socket.removeListener('error', freeSocketErrorListener);
   socket.on('error', freeSocketErrorListener);
 };
@@ -65,7 +66,7 @@ const packHttpMessage = () => {
   }
 };
 
-const packSocket = socket => {
+const packSocket = (socket) => {
   if (socket.listeners('close').indexOf(packHttpMessage) === -1) {
     socket.once('close', packHttpMessage);
   }
@@ -91,7 +92,7 @@ exports.getAgent = (options, reqOpts) => {
   if (!agent) {
     const originProxyHeaders = {};
     headers['x-whistle-policy'] = 'intercept';
-    Object.keys(headers).forEach(name => {
+    Object.keys(headers).forEach((name) => {
       const rawKey = name
         .split('-')
         .map(capitalize)
@@ -109,8 +110,8 @@ exports.getAgent = (options, reqOpts) => {
     agents.set(key, agent);
     agent.on('free', preventThrowOutError);
     const { createSocket } = agent;
-    agent.createSocket = function(opts, cb) {
-      createSocket.call(this, opts, socket => {
+    agent.createSocket = function (opts, cb) {
+      createSocket.call(this, opts, (socket) => {
         packSocket(socket);
         socket.setTimeout(IDLE_TIMEOU, () => {
           socket.destroy();

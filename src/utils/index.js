@@ -1,4 +1,8 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable consistent-return */
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable func-names */
+/* eslint-disable no-param-reassign */
+/* eslint-disable prefer-destructuring */
 const http = require('http');
 const https = require('https');
 const { parse: urlParse } = require('url');
@@ -13,10 +17,10 @@ const HOST_RE = /^\s*[\w.-]+\s*$/;
 const CONNECT_RE = /^\s*connect\s*$/i;
 let globalProxy;
 
-const checkHost = host => HOST_RE.test(host);
-const checkPort = port => port > 0 && port <= 65535;
+const checkHost = (host) => HOST_RE.test(host);
+const checkPort = (port) => port > 0 && port <= 65535;
 
-const formatProxy = proxy => {
+const formatProxy = (proxy) => {
   if (!proxy || typeof proxy === 'function') {
     return proxy;
   }
@@ -46,9 +50,7 @@ const getProxy = (options, isHttps) => {
   return proxy;
 };
 
-const checkMethod = opts => {
-  return opts && CONNECT_RE.test(opts.method);
-};
+const checkMethod = (opts) => opts && CONNECT_RE.test(opts.method);
 
 function ClientRequestProxy(uri, options, cb, isHttps) {
   if (typeof uri === 'string') {
@@ -58,7 +60,7 @@ function ClientRequestProxy(uri, options, cb, isHttps) {
     cb = options;
     options = uri;
   } else {
-    options = Object.assign({}, uri, options);
+    options = { ...uri, ...options };
   }
   if (isHttps) {
     options._defaultAgent = https.globalAgent;
@@ -84,7 +86,7 @@ function ClientRequestProxy(uri, options, cb, isHttps) {
 util.inherits(ClientRequestProxy, ClientRequest);
 
 http.ClientRequest = ClientRequestProxy;
-http.request = function(url, options, cb) {
+http.request = function (url, options, cb) {
   return new ClientRequestProxy(url, options, cb);
 };
 http.get = function get(url, options, cb) {
@@ -93,7 +95,7 @@ http.get = function get(url, options, cb) {
   return req;
 };
 
-https.request = function(url, options, cb) {
+https.request = function (url, options, cb) {
   return new ClientRequestProxy(url, options, cb, true);
 };
 https.get = function get(url, options, cb) {
@@ -102,7 +104,7 @@ https.get = function get(url, options, cb) {
   return req;
 };
 
-exports.setProxy = proxy => {
+exports.setProxy = (proxy) => {
   globalProxy = formatProxy(proxy);
   return globalProxy;
 };
@@ -115,7 +117,7 @@ exports.removeProxy = () => {
   globalProxy = null;
 };
 
-const createConnection = options => {
+const createConnection = (options) => {
   const proxy = getProxy(options);
   if (!proxy) {
     return new Promise((resolve, reject) => {
@@ -141,7 +143,7 @@ const createConnection = options => {
     req.on('connect', (res, socket) => {
       if (res.statusCode !== 200) {
         return reject(
-          new Error(`Tunneling socket could not be established, statusCode=${res.statusCode}`)
+          new Error(`Tunneling socket could not be established, statusCode=${res.statusCode}`),
         );
       }
       resolve(socket);
@@ -153,12 +155,8 @@ const createConnection = options => {
 
 exports.createConnection = createConnection;
 
-exports.createTlsConnection = options => {
-  return createConnection(options).then(socket => {
-    return tls.connect({
-      socket,
-      rejectUnauthorized: false,
-      servername: options.servername || options.host,
-    });
-  });
-};
+exports.createTlsConnection = (options) => createConnection(options).then((socket) => tls.connect({
+  socket,
+  rejectUnauthorized: false,
+  servername: options.servername || options.host,
+}));

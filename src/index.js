@@ -1,14 +1,16 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/no-var-requires */
-
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-shadow */
+/* eslint-disable func-names */
+/* eslint-disable global-require */
 const { env } = process;
+const isPort = (port) => typeof port === 'number' || typeof port === 'string';
 
 if (env.NOHOST === 'true') {
   const utils = require('./utils');
   const net = require('net');
   const host = env.NOHOST_HOST || '127.0.0.1';
   const port = env.NOHOST_PORT || 8899;
-  const headers: any = {};
+  const headers = {};
   if (env.NOHOST_ENV) {
     headers['x-whistle-nohost-env'] = env.NOHOST_ENV;
   }
@@ -29,15 +31,14 @@ if (env.NOHOST === 'true') {
   });
   // 覆盖listen方法用于docker启动时替换端口
   const originListen = net.Server.prototype.listen;
-  const isPort = (port: string | number) => typeof port === 'number' || typeof port === 'string';
-  net.Server.prototype.listen = function(...args: any[]) {
+  net.Server.prototype.listen = function (...args) {
     const { PORT } = env;
     if (PORT) {
       if (isPort(args[0])) {
-        //(port[,callback])
+        // (port[,callback])
         args[0] = Number(PORT);
       } else if (isPort(args[0].port)) {
-        //(options)
+        // (options)
         args[0].port = Number(PORT);
       }
     }

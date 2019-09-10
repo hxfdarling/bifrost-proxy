@@ -1,9 +1,10 @@
 process.env.NOHOST = 'true';
 process.env.PORT = '1234';
-import './index';
-import { createServer } from 'http';
+require('./index');
+const { createServer } = require('http');
+
 describe('test suites', () => {
-  it('test module', async (done: any) => {
+  it('test module', async (done) => {
     const s = createServer((req, res) => {
       res.write('data');
       res.end();
