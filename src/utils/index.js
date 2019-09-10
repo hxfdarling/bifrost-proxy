@@ -73,6 +73,10 @@ function ClientRequestProxy(uri, options, cb, isHttps) {
       }
       Object.assign(options.headers, proxy.headers);
     }
+    // 清理whistle特殊请求头
+    delete options.headers['x-whistle-real-host'];
+    delete options.headers['x-whistle-https-request'];
+    delete options.headers['x-nohost-client-version'];
   }
   ClientRequest.call(this, options, cb);
 }
