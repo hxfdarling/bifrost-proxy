@@ -79,7 +79,6 @@ function ClientRequestProxy(uri, options, cb, isHttps) {
     delete options.headers['x-whistle-real-host'];
     delete options.headers['x-whistle-https-request'];
     delete options.headers['x-nohost-client-version'];
-    console.log('[nohost-env]', decodeURIComponent(options.headers['x-whistle-nohost-env'] || ''));
   }
   ClientRequest.call(this, options, cb);
 }
