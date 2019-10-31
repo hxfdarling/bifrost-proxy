@@ -79,6 +79,7 @@ function ClientRequestProxy(uri, options, cb, isHttps) {
     delete options.headers['x-whistle-real-host'];
     delete options.headers['x-whistle-https-request'];
     delete options.headers['x-nohost-client-version'];
+    delete options.headers['x-nohost-forwarded-for'];
   }
   ClientRequest.call(this, options, cb);
 }
