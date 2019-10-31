@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.6](https://github.com/hxfdarling/nohost-proxy/compare/v1.1.3...v1.1.6) (2019-10-31)
+
+### Bug Fixes
+
+- 修复 x-nohost-forwarded-for 没有删除,造成重复添加的问题 ([997fd03](https://github.com/hxfdarling/nohost-proxy/commit/997fd03))
+- 移除多余的日志 ([37d92d6](https://github.com/hxfdarling/nohost-proxy/commit/37d92d6))
+- 优化 nohost 请求转发，优先使用原始请求 headers ([a2d9c0c](https://github.com/hxfdarling/nohost-proxy/commit/a2d9c0c))
+
 ### [1.1.5](https://github.com/hxfdarling/nohost-proxy/compare/v1.1.4...v1.1.5) (2019-10-22)
 
 ### Bug Fixes
