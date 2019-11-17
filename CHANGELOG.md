@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/hxfdarling/nohost-proxy/compare/v1.1.6...v1.2.0) (2019-11-17)
+
+### Features
+
+- 添加代理请求头标示 ([42163df](https://github.com/hxfdarling/nohost-proxy/commit/42163df))
+
 ### [1.1.6](https://github.com/hxfdarling/nohost-proxy/compare/v1.1.3...v1.1.6) (2019-10-31)
 
 ### Bug Fixes
