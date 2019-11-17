@@ -1,7 +1,6 @@
 {
   "name": "nohost-proxy",
   "version": "1.2.0",
-  "description": "",
   "main": "lib/index.js",
   "author": "zman",
   "license": "MIT",
@@ -72,5 +71,17 @@
     "cz-customizable": {
       "config": "node_modules/@a8k/changelog/cz-config.js"
     }
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hxfdarling/nohost-proxy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hxfdarling/nohost-proxy/issues"
+  },
+  "homepage": "https://github.com/hxfdarling/nohost-proxy#readme",
+  "description": "为 Nodejs 提供全局代理服务，可以拦截所有从 Nodejs 发出的请求，并配置自定义代理服务器"
 }
