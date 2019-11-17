@@ -16,32 +16,32 @@
   "dependencies": {
     "hagent": "^0.6.1",
     "lru-cache": "^5.1.1",
-    "uuid": "^3.3.2"
+    "uuid": "^3.3.3"
   },
   "files": [
     "lib"
   ],
   "devDependencies": {
-    "@a8k/changelog": "^2.0.0-beta.20",
-    "@commitlint/cli": "^8.0.0",
-    "commitizen": "^3.1.1",
-    "commitlint-config-cz": "^0.12.0",
+    "@a8k/changelog": "^2.3.0",
+    "@commitlint/cli": "^8.2.0",
+    "commitizen": "^3.1.2",
+    "commitlint-config-cz": "^0.12.1",
     "cz-customizable": "^6.2.0",
-    "eslint": "^6.3.0",
+    "eslint": "^6.6.0",
     "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-config-prettier": "^6.0.0",
+    "eslint-config-prettier": "^6.6.0",
     "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-prettier": "^3.1.0",
-    "husky": "^3.0.0",
-    "jest": "^24.0.0",
-    "lint-staged": "^9.2.0",
-    "nodemon": "^1.19.1",
-    "prettier": "^1.18.2",
-    "rimraf": "^2.6.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "husky": "^3.0.9",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.4.3",
+    "nodemon": "^1.19.4",
+    "prettier": "^1.19.1",
+    "rimraf": "^2.7.1",
     "standard-version": "^7.0.0",
     "stylelint": "^10.1.0",
     "stylelint-config-standard": "^18.3.0",
-    "stylelint-scss": "^3.9.1"
+    "stylelint-scss": "^3.12.1"
   },
   "lint-staged": {
     "*.{css,less,scss}": [
