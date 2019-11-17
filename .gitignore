@@ -8,7 +8,6 @@
 # production
 /dist
 /public
-/lib
 
 # test
 coverage

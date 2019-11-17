@@ -2,14 +2,14 @@
   "name": "nohost-proxy",
   "version": "1.1.6",
   "description": "",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "author": "zman",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint 'src/**/*.{js,ts,tsx}' --fix",
-    "stylelint": "stylelint --fix src/**/*.{less,scss,css}",
-    "test": "jest --rootDir ./src",
-    "test:w": "jest --watchAll --rootDir ./src --passWithNoTests",
+    "lint": "eslint 'lib/**/*.{js,ts,tsx}' --fix",
+    "stylelint": "stylelint --fix lib/**/*.{less,scss,css}",
+    "test": "jest --rootDir ./lib",
+    "test:w": "jest --watchAll --rootDir ./lib --passWithNoTests",
     "prepublishOnly": "npm run test ",
     "release": "npm run test && standard-version"
   },
@@ -19,7 +19,7 @@
     "uuid": "^3.3.2"
   },
   "files": [
-    "src"
+    "lib"
   ],
   "devDependencies": {
     "@a8k/changelog": "^2.0.0-beta.20",
