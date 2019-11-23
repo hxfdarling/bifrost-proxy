@@ -1,5 +1,5 @@
 {
-  "name": "nox-proxy",
+  "name": "bifrost-proxy",
   "version": "1.2.0",
   "main": "lib/index.js",
   "author": "zman",
@@ -77,11 +77,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hxfdarling/nox-proxy.git"
+    "url": "git+https://github.com/hxfdarling/bifrost-proxy.git"
   },
   "bugs": {
-    "url": "https://github.com/hxfdarling/nox-proxy/issues"
+    "url": "https://github.com/hxfdarling/bifrost-proxy/issues"
   },
-  "homepage": "https://github.com/hxfdarling/nox-proxy#readme",
+  "homepage": "https://github.com/hxfdarling/bifrost-proxy#readme",
   "description": "为 Nodejs 提供全局代理服务，可以拦截所有从 Nodejs 发出的请求，并配置自定义代理服务器"
 }
