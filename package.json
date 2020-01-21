@@ -13,34 +13,34 @@
     "release": "npm run test && standard-version"
   },
   "dependencies": {
-    "hagent": "^0.6.1",
+    "hagent": "^0.7.0",
     "lru-cache": "^5.1.1",
-    "uuid": "^3.3.3"
+    "uuid": "^3.4.0"
   },
   "files": [
     "lib"
   ],
   "devDependencies": {
     "@a8k/changelog": "^2.3.0",
-    "@commitlint/cli": "^8.2.0",
+    "@commitlint/cli": "^8.3.5",
     "commitizen": "^3.1.2",
     "commitlint-config-cz": "^0.12.1",
     "cz-customizable": "^6.2.0",
-    "eslint": "^6.6.0",
+    "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-config-prettier": "^6.6.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-prettier": "^3.1.1",
-    "husky": "^3.0.9",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^3.1.0",
     "jest": "^24.9.0",
-    "lint-staged": "^9.4.3",
+    "lint-staged": "^9.5.0",
     "nodemon": "^1.19.4",
     "prettier": "^1.19.1",
     "rimraf": "^2.7.1",
-    "standard-version": "^7.0.0",
+    "standard-version": "^7.0.1",
     "stylelint": "^10.1.0",
     "stylelint-config-standard": "^18.3.0",
-    "stylelint-scss": "^3.12.1"
+    "stylelint-scss": "^3.13.0"
   },
   "lint-staged": {
     "*.{css,less,scss}": [
