@@ -9,7 +9,12 @@
 修改启动代码
 
 ```js
-require('bifrost-proxy'); // 必须要在最前面
+// 设置代理地址和端口
+process.env.BIFROST_HOST = '127.0.0.1';
+process.env.BIFROST_PORT = 8899;
+
+require('bifrost-proxy'); // 必须要在业务代码前面
 // you code...
 const Koa = require('koa');
+// you code...
 ```
