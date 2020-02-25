@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.1](https://github.com/hxfdarling/bifrost-proxy/compare/v1.2.0...v1.2.1) (2020-02-25)
+
+### Bug Fixes
+
+- 基于环境变量的端口自定添加触发逻辑 ([b66ca24](https://github.com/hxfdarling/bifrost-proxy/commit/b66ca249566a762ed330405c2785023b3b05df6b))
+
 ## [1.2.0](https://github.com/hxfdarling/bifrost-proxy/compare/v1.1.6...v1.2.0) (2019-11-17)
 
 ### Features
