@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.3](https://github.com/hxfdarling/bifrost-proxy/compare/v1.2.1...v1.2.3) (2020-09-24)
+
+### Bug Fixes
+
+- 修复在动态分配端口时可能存在冲突 ([fef022c](https://github.com/hxfdarling/bifrost-proxy/commit/fef022ccacbd9b5d06bbcd2a14dbb99003fd895a))
+- 修复 http 请求中,默认 header 有 host,优先使用了 header 中的 host ([f37c71e](https://github.com/hxfdarling/bifrost-proxy/commit/f37c71ec3b159854a409478392997f75fd7e2a72))
+
 ### [1.2.2](https://github.com/hxfdarling/bifrost-proxy/compare/v1.2.1...v1.2.2) (2020-03-16)
 
 ### Bug Fixes
