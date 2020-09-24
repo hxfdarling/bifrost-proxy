@@ -34,6 +34,7 @@
     "husky": "^3.1.0",
     "jest": "^24.9.0",
     "lint-staged": "^9.5.0",
+    "node-fetch": "^2.6.1",
     "nodemon": "^1.19.4",
     "prettier": "^1.19.1",
     "rimraf": "^2.7.1",
