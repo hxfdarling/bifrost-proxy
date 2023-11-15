@@ -11,7 +11,11 @@
 ```js
 // 设置代理地址和端口
 process.env.BIFROST_HOST = '127.0.0.1';
-process.env.BIFROST_PORT = 8899;
+process.env.BIFROST_PORT = '8899';
+process.env.BIFROST = 'true'; // 启动代理
+
+// 允许自定义证书
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
 require('bifrost-proxy'); // 必须要在业务代码前面
 // you code...
