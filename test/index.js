@@ -1,13 +1,16 @@
+/* eslint-disable no-undef */
 process.env.BIFROST = true;
 require('../lib/index');
-const fetch = require('node-fetch');
-const WebSocket = require('ws');
 
-fetch('https://act.snssdk.com/test/', {
-  headers: {
-    // host: '127.0.0.1:8080',
-  },
-}).then((r) => console.log(`status:${r.status}`));
+if (global.fetch) {
+  fetch('https://act.snssdk.com/test/', {}).then((r) => console.log(`status:${r.status}`));
+  fetch('http://act.snssdk.com/test2/', {}).then((r) => console.log(`status:${r.status}`));
+  fetch(
+    new Request('https://act.snssdk.com/test3/', { method: 'POST', body: '{}', headers: { x: 1 } }),
+  ).then((r) => console.log(`status:${r.status}`));
+}
+
+const WebSocket = require('ws');
 
 const ws = new WebSocket('ws://121.40.165.18:8800');
 ws.onopen = function () {
