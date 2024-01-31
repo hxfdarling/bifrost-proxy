@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/hxfdarling/bifrost-proxy/compare/v1.2.1...v1.4.0) (2024-01-31)
+
+### Features
+
+- 支持 socke 代理 ([2b4e8fa](https://github.com/hxfdarling/bifrost-proxy/commit/2b4e8fab1434308c0b4bd7ff553504a146b24a67))
+
+### Bug Fixes
+
+- 代理 http 到 charles 失败的问题 ([035bd14](https://github.com/hxfdarling/bifrost-proxy/commit/035bd14522a0d8e7bd20f2e2e896dbddac6828f2))
+- 修复 fetch 请求不支持端口情况 ([b4d9feb](https://github.com/hxfdarling/bifrost-proxy/commit/b4d9febdd5d9f69cbd46d7f427aaaede5f237a0d))
+- 修复 http 请求中,默认 header 有 host,优先使用了 header 中的 host ([f37c71e](https://github.com/hxfdarling/bifrost-proxy/commit/f37c71ec3b159854a409478392997f75fd7e2a72))
+- 修复在动态分配端口时可能存在冲突 ([fef022c](https://github.com/hxfdarling/bifrost-proxy/commit/fef022ccacbd9b5d06bbcd2a14dbb99003fd895a))
+
 ### [1.3.1](https://github.com/hxfdarling/bifrost-proxy/compare/v1.3.0...v1.3.1) (2023-12-19)
 
 ## [1.3.0](https://github.com/hxfdarling/bifrost-proxy/compare/v1.2.1...v1.3.0) (2023-12-19)
