@@ -1,6 +1,9 @@
 # bifrost-proxy
 
-为 Nodejs 提供全局代理服务，可以拦截所有从 Nodejs 发出的请求，并配置自定义代理服务器
+**高性能代理服务请见 [bifrost-proxy](https://github.com/bifrost-proxy/bifrost)**
+
+
+当前工程是为 Nodejs 提供全局代理服务，可以拦截所有从 Nodejs 发出的请求，并配置自定义代理服务器
 
 **用法：**
 
